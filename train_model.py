@@ -16,8 +16,8 @@ class SignatureDataset(Dataset):
         self.classes = []
 
         for cls in sorted(os.listdir(root_dir)):
-            person_id = cls.split('_')[0]
-            signature_type = cls.split('_')[-1] if '_' in cls else 'genuine'
+            person_id = cls.split('-')[0]
+            signature_type = cls.split('-')[-1] if '-' in cls else 'genuine'
 
             cls_path = os.path.join(root_dir, cls)
             if os.path.isdir(cls_path):
